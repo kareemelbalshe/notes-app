@@ -1,9 +1,11 @@
-import { Router } from 'express'
-import { about, homePage } from '../controllers/mainController.js'
+const express = require('express');
+const router = express.Router();
+const mainController = require('../controllers/mainController');
 
-const router = Router()
+/**
+ * App Routes 
+*/
+router.get('/', mainController.homepage);
+router.get('/about', mainController.about);
 
-router.get('/', homePage)
-router.get('/about', about)
-
-export default router
+module.exports = router;
